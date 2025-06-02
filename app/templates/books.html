@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Library Books</h2>
+
+<!-- Add Book and My History buttons -->
+<div class="d-flex justify-content-between mb-3">
+  <a class="btn btn-success" href="{{ url_for('book.add_book') }}">Add Book</a>
+  <a class="btn btn-outline-info" href="{{ url_for('checkout.history') }}">My History</a>
+</div>
+
+<!-- Search form -->
+<form method="get" class="row g-2 mb-3">
+  <div class="col"><input name="title" class="form-control" placeholder="Title"></div>
+  <div class="col"><input name="author" class="form-control" placeholder="Author"></div>
+  <div class="col"><input name="language" class="form-control" placeholder="Language"></div>
+  <div class="col"><input name="year" type="number" class="form-control" placeholder="Year"></div>
+  <div class="col-auto">
+    <button class="btn btn-outline-primary">Search</button>
+  </div>
+</form>
+
+<!-- Book table -->
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Author</th>
+      <th>Year</th>
+      <th>Language</th>
+      <th>Status</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for book in books %}
+    <tr>
+      <td>{{ book.title }}</td>
+      <td>{{ book.author }}</td>
+      <td>{{ book.year }}</td>
+      <td>{{ book.language }}</td>
+      <td>{{ 'Available' if book.available else 'Checked out' }}</td>
+      <td>
+        <a class="btn btn-sm btn-outline-primary" href="{{ url_for('book.edit_book', book_id=book.id) }}">Edit</a>
+        <a class="btn btn-sm btn-outline-danger" href="{{ url_for('book.delete_book', book_id=book.id) }}">Delete</a>
+        {% if book.available %}
+          <a class="btn btn-sm btn-outline-success" href="{{ url_for('checkout.borrow', book_id=book.id) }}">Check Out</a>
+        {% else %}
+          <a class="btn btn-sm btn-outline-warning" href="{{ url_for('checkout.return_book', book_id=book.id) }}">Return</a>
+        {% endif %}
+      </td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

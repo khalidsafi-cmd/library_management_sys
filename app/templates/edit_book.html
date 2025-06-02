@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Edit Book</h2>
+<form method="post">
+    <input name="title" value="{{ book.title }}" class="form-control mb-2" required>
+    <input name="author" value="{{ book.author }}" class="form-control mb-2" required>
+    <input name="year" type="number" value="{{ book.year }}" class="form-control mb-2" required>
+    <input name="language" value="{{ book.language }}" class="form-control mb-2" required>
+    <button class="btn btn-warning">Update Book</button>
+</form>
+{% endblock %}

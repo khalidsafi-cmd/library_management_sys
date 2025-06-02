@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>My Check-Out History</h2>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Book</th>
+      <th>Checked Out</th>
+      <th>Returned</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for c in checkouts %}
+    <tr>
+      <td>{{ c.book.title }}</td>
+      <td>{{ c.checkout_date.strftime('%Y-%m-%d') }}</td>
+      <td>{{ c.return_date.strftime('%Y-%m-%d') if c.return_date else 'Not Returned' }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}
