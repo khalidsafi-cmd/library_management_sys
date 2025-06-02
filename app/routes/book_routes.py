@@ -2,6 +2,7 @@ from flask import Blueprint, render_template, request, redirect, url_for
 from flask_login import login_required
 from app import db
 from app.models import Book
+from datetime import datetime
 
 bp = Blueprint('book', __name__)
 
@@ -40,6 +41,7 @@ def add_book():
         db.session.commit()
         return redirect(url_for('book.index'))
     return render_template('add_book.html')
+    return render_template('add_book.html', current_year=datetime.now().year)
 
 @bp.route('/book/edit/<int:book_id>', methods=['GET', 'POST'])
 @login_required

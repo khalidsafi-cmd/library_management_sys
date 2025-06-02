@@ -1,11 +1,71 @@
 {% extends "base.html" %}
+
 {% block content %}
-<h2>Add New Book</h2>
-<form method="post">
-    <input name="title" placeholder="Title" class="form-control mb-2" required>
-    <input name="author" placeholder="Author" class="form-control mb-2" required>
-    <input name="year" type="number" placeholder="Year" class="form-control mb-2" required>
-    <input name="language" placeholder="Language" class="form-control mb-2" required>
-    <button class="btn btn-primary">Add Book</button>
-</form>
+<div class="row justify-content-center">
+    <div class="col-md-8 col-lg-6">
+        <div class="card login-card shadow-lg mt-5">
+            <div class="card-header login-header bg-info text-white">
+                <h3 class="text-center mb-0">
+                    <i class="fas fa-book-medical me-2"></i>Add New Book
+                </h3>
+            </div>
+            <div class="card-body">
+                <form method="post">
+                    <div class="mb-3">
+                        <label for="title" class="form-label">Title</label>
+                        <div class="input-group">
+                            <span class="input-group-text">
+                                <i class="fas fa-heading"></i>
+                            </span>
+                            <input type="text" class="form-control" id="title" name="title"
+                                   placeholder="Enter book title" required>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="author" class="form-label">Author</label>
+                        <div class="input-group">
+                            <span class="input-group-text">
+                                <i class="fas fa-user-edit"></i>
+                            </span>
+                            <input type="text" class="form-control" id="author" name="author"
+                                   placeholder="Enter author name" required>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="year" class="form-label">Publication Year</label>
+                        <div class="input-group">
+                            <span class="input-group-text">
+                                <i class="fas fa-calendar-alt"></i>
+                            </span>
+                            <input type="number" class="form-control" id="year" name="year"
+                                   placeholder="Enter publication year" min="1000" max="{{ current_year }}" required>
+                        </div>
+                    </div>
+
+                    <div class="mb-4">
+                        <label for="language" class="form-label">Language</label>
+                        <div class="input-group">
+                            <span class="input-group-text">
+                                <i class="fas fa-language"></i>
+                            </span>
+                            <input type="text" class="form-control" id="language" name="language"
+                                   placeholder="Enter book language" required>
+                        </div>
+                    </div>
+
+                    <div class="d-grid gap-2">
+                        <button type="submit" class="btn btn-info btn-login text-white">
+                            <i class="fas fa-plus-circle me-2"></i>Add Book
+                        </button>
+                    </div>
+                </form>
+            </div>
+            <div class="card-footer text-center text-muted">
+                <small>Back to <a href="{{ url_for('book.index') }}">Book Collection</a></small>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}

@@ -1,0 +1,321 @@
+/* ===== Base Styles ===== */
+body {
+    background-color: #f8f9fa;
+    background-image: linear-gradient(rgba(248, 249, 250, 0.95), rgba(248, 249, 250, 0.95)),
+                      url('https://images.unsplash.com/photo-1507842217343-583bb7270b66?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* ===== Login Card Styles ===== */
+.login-card {
+    max-width: 500px;
+    border-radius: 12px;
+    border: none;
+    overflow: hidden;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.login-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+}
+
+.login-header {
+    border-radius: 0 !important;
+    padding: 1.5rem;
+    background: linear-gradient(135deg, #2c3e50, #4ca1af);
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+
+.login-header h3 {
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+/* ===== Form Styles ===== */
+.login-card .card-body {
+    padding: 2rem 2.5rem;
+}
+
+.form-label {
+    font-weight: 500;
+    color: #495057;
+    margin-bottom: 0.5rem;
+}
+
+.input-group-text {
+    background-color: #f1f3f5;
+    border-right: none;
+    color: #495057;
+}
+
+.form-control {
+    border-left: none;
+    padding: 0.75rem 1rem;
+    transition: all 0.3s;
+}
+
+.form-control:focus {
+    border-color: #86b7fe;
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.15);
+}
+
+/* ===== Button Styles ===== */
+.btn-login {
+    letter-spacing: 0.5px;
+    padding: 0.75rem;
+    font-weight: 500;
+    border-radius: 8px;
+    transition: all 0.3s;
+    background: linear-gradient(135deg, #2c3e50, #4ca1af);
+    border: none;
+}
+
+.btn-login:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(44, 62, 80, 0.25);
+    background: linear-gradient(135deg, #34495e, #5fb0bf);
+}
+
+/* ===== Footer Link ===== */
+.card-footer {
+    background-color: transparent;
+    border-top: none;
+    padding: 1rem 2.5rem 1.5rem;
+}
+
+.card-footer a {
+    text-decoration: none;
+    color: #2c3e50;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.card-footer a:hover {
+    color: #4ca1af !important;
+}
+
+/* ===== Alert Messages ===== */
+.alert {
+    border-radius: 8px;
+    padding: 0.75rem 1.25rem;
+}
+
+/* ===== Auth Navigation ===== */
+.btn-outline-primary {
+    color: #2c3e50;
+    border-color: #2c3e50;
+}
+
+.btn-outline-primary:hover {
+    background-color: #2c3e50;
+    color: white;
+}
+
+.btn-outline-success {
+    color: #4ca1af;
+    border-color: #4ca1af;
+}
+
+.btn-outline-success:hover {
+    background-color: #4ca1af;
+    color: white;
+}
+
+/* ===== Responsive Adjustments ===== */
+@media (max-width: 576px) {
+    .login-card {
+        margin-top: 2rem !important;
+    }
+
+    .login-card .card-body {
+        padding: 1.5rem;
+    }
+
+    .card-footer {
+        padding: 1rem 1.5rem 1.5rem;
+    }
+}
+
+/* ===== Register Page Specific Styles ===== */
+.login-header.bg-success {
+    background: linear-gradient(135deg, #27ae60, #2ecc71) !important;
+}
+
+.btn-login.btn-success {
+    background: linear-gradient(135deg, #27ae60, #2ecc71) !important;
+}
+
+.btn-login.btn-success:hover {
+    background: linear-gradient(135deg, #2ecc71, #3498db) !important;
+    box-shadow: 0 4px 12px rgba(46, 204, 113, 0.25) !important;
+}
+
+.form-text {
+    font-size: 0.85rem;
+    color: #6c757d;
+    margin-top: 0.25rem;
+    padding-left: 0.5rem;
+}
+
+/* ===== Add Book Page Specific Styles ===== */
+.login-header.bg-info {
+    background: linear-gradient(135deg, #2980b9, #3498db) !important;
+}
+
+.btn-login.btn-info {
+    background: linear-gradient(135deg, #2980b9, #3498db) !important;
+    border: none;
+}
+
+.btn-login.btn-info:hover {
+    background: linear-gradient(135deg, #3498db, #3cb0fd) !important;
+    box-shadow: 0 4px 12px rgba(52, 152, 219, 0.25) !important;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Ensure year field doesn't show spin buttons */
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+/* ===== Add Book Page Specific Styles ===== */
+.login-header.bg-info {
+    background: linear-gradient(135deg, #2980b9, #3498db) !important;
+}
+
+.btn-login.btn-info {
+    background: linear-gradient(135deg, #2980b9, #3498db) !important;
+    border: none;
+}
+
+.btn-login.btn-info:hover {
+    background: linear-gradient(135deg, #3498db, #3cb0fd) !important;
+    box-shadow: 0 4px 12px rgba(52, 152, 219, 0.25) !important;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Ensure year field doesn't show spin buttons */
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+
+/* ===== Library Books Page Styles ===== */
+.table-hover tbody tr:hover {
+    background-color: rgba(52, 152, 219, 0.05);
+}
+
+.table th {
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 0.5px;
+    color: #6c757d;
+    border-bottom-width: 2px;
+}
+
+.table td {
+    vertical-align: middle;
+}
+
+.badge {
+    font-weight: 500;
+    padding: 0.35em 0.65em;
+    font-size: 0.75em;
+}
+
+.btn-sm {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.8rem;
+    border-radius: 0.25rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .table-responsive {
+        border: 0;
+    }
+
+    .table thead {
+        display: none;
+    }
+
+    .table tr {
+        display: block;
+        margin-bottom: 1rem;
+        border: 1px solid #dee2e6;
+        border-radius: 0.25rem;
+    }
+
+    .table td {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid #dee2e6;
+    }
+
+    .table td::before {
+        content: attr(data-label);
+        font-weight: bold;
+        padding-right: 1rem;
+        text-transform: uppercase;
+        font-size: 0.8rem;
+        color: #6c757d;
+    }
+
+    .table td:last-child {
+        border-bottom: 0;
+    }
+
+    .table td .d-flex {
+        justify-content: flex-end;
+    }
+}
+/* ===== Edit Book Page Specific Styles ===== */
+.login-header.bg-warning {
+    background: linear-gradient(135deg, #f39c12, #f1c40f) !important;
+}
+
+.btn-login.btn-warning {
+    background: linear-gradient(135deg, #f39c12, #f1c40f) !important;
+    border: none;
+}
+
+.btn-login.btn-warning:hover {
+    background: linear-gradient(135deg, #f1c40f, #f5d76e) !important;
+    box-shadow: 0 4px 12px rgba(241, 196, 15, 0.25) !important;
+}
+
+/* Make sure your base.css already has these: */
+.input-group-text {
+    background-color: #f1f3f5;
+    border-right: none;
+    color: #495057;
+}
+
+.form-control {
+    border-left: none;
+    padding: 0.75rem 1rem;
+    transition: all 0.3s;
+}
+
+.form-control:focus {
+    border-color: #86b7fe;
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.15);
+}
