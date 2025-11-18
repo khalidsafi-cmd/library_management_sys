@@ -1,0 +1,7 @@
+#ignore the vevn
+
+/venv
+
+
+#ignore pycharm configuration
+/.idea
